@@ -24,13 +24,12 @@ while abs(gradx[-1]) > eps and n < nmax:
 		while grad(x[-1] + istep * step,dx,fun.f) < 0:
 			istep += 1
 		x.append(x[-1] + istep * step)
-		gradx.append(grad(x[-1],dx,fun.f))
 	else:
 		istep = 1
 		while grad(x[-1] - istep * step,dx,fun.f) > 0:
 			istep += 1
 		x.append(x[-1] - istep * step)
-		gradx.append(grad(x[-1],dx,fun.f))
+	gradx.append(grad(x[-1],dx,fun.f))
  
 
 # Affichage des resultats
